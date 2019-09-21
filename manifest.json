@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "华侨大学一键评教插件",
+  "version": "0.0.1",
+
+  "description": "华侨大学评教",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "scripts": ["back.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "js": ["inject.js"],
+      "matches": ["http://10.4.12.22/pingjiao/PingJiao/CourseEval.aspx"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "华侨大学甜甜圈评教脚本",
+    "default_popup": "popup.html"
+  }
+}
